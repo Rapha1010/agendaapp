@@ -1,0 +1,7 @@
+com\agendaapp\controllers\AgendaRestController.class
+com\agendaapp\DataConfiguration.class
+com\agendaapp\controllers\AgendaController.class
+com\agendaapp\AgendaappApplication.class
+com\agendaapp\models\Pessoa.class
+com\agendaapp\repository\PessoaRepository.class
+com\agendaapp\controllers\IndexController.class

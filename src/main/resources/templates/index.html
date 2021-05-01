@@ -1,0 +1,44 @@
+<th:block th:include="header"></th:block>
+
+<div class="container">
+	<form method="post" action= "busca">
+		<div class = "row">
+			<div class="input-field col s8">
+				<input type="text" value="" placeholder="Busca de contato (Nome e Email)" name="busca">
+			</div>
+			<div class="input-field col s4">
+				<button class="waves-effect waves-light btn-small"  type="submit">buscar</button>
+				<button class="waves-effect waves-light btn-small" onclick="" >Limpar</button>
+			</div>
+		</div>
+	</form>
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>Email</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</thead>
+		<tbody>
+			<tr th:each="pessoa : ${pessoas}"> 
+				<td>
+					<span th:text="${pessoa.primeiroNome}"></span>
+				</td>
+				<td>
+					<span th:text="${pessoa.email}"></span>
+				</td>
+				
+				<td>
+					<a class="waves-effect waves-light small"  th:href="${(#mvc.url('IC#editContatoGet').arg(0, pessoa.id)).build()}"><i class="material-icons left">create</i></a> 
+				</td>
+				
+				<td>
+					<a class="waves-effect waves-light small"  th:href="${(#mvc.url('IC#deleteContato').arg(0, pessoa.id)).build()}"><i class="material-icons left">delete</i></a> 
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<th:block th:include="footer"></th:block>
